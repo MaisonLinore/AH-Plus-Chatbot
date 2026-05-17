@@ -236,7 +236,7 @@
   <div class="messages-area" id="messagesArea">
     <div class="message assistant-message">
       <div class="bubble">
-        👋 Saya AH+, asisten AI cerdas. Masukkan PIN di kotak bawah kanan, lalu mulai bertanya.
+        👋 I am AH+, agentic Smart AI,entry your PIN and ask anything.
       </div>
     </div>
   </div>
@@ -256,7 +256,7 @@
     <div class="pin-field">
       <input type="password" id="pinInput" placeholder="entry your pin" autocomplete="off">
     </div>
-    <div class="status-text" id="statusMsg">✅ Siap. Masukkan PIN (API key) untuk memulai.</div>
+    <div class="status-text" id="statusMsg">✅ Succes. PIN Entry to Start.</div>
   </div>
 </div>
 
@@ -269,7 +269,7 @@
   const statusSpan = document.getElementById('statusMsg');
 
   // Model tetap Gemini 2.5 Flash (tidak ada pilihan)
-  const GEMINI_MODEL = "gemini-2.5-flash-preview-09-2025";
+  const GEMINI_MODEL = "gemini-2.5-flash";
 
   // Load PIN dari localStorage (tanpa label apapun)
   let currentPin = localStorage.getItem('ahplus_pin') || '';
@@ -376,7 +376,7 @@
     userInput.value = '';
     userInput.focus();
     isWaiting = true;
-    statusSpan.innerText = "🧠 AH+ berpikir...";
+    statusSpan.innerText = "🧠 AH+...";
     showTyping();
 
     try {
