@@ -236,7 +236,7 @@
   <div class="messages-area" id="messagesArea">
     <div class="message assistant-message">
       <div class="bubble">
-        👋 I am AH+, Gen AI,entry your PIN and ask anything.
+        👋 I am AH+, Generative AI,entry your PIN and ask anything.
       </div>
     </div>
   </div>
@@ -269,7 +269,7 @@
   const statusSpan = document.getElementById('statusMsg');
 
   // Model tetap Gemini 2.5 Flash (tidak ada pilihan)
-  const GEMINI_MODEL = "gemini-3.1-flash";
+  const GEMINI_MODEL = "gemini-3.1-pro-preview";
 
   // Load PIN dari localStorage (tanpa label apapun)
   let currentPin = localStorage.getItem('ahplus_pin') || '';
@@ -338,7 +338,7 @@
 
   // Panggil Gemini API
   async function callGemini(userMessage, pin) {
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${pin}`;
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-pro-preview:generateContent?key=${pin}`;
     const requestBody = {
       contents: [{ parts: [{ text: userMessage }] }],
       generationConfig: { temperature: 0.7, maxOutputTokens: 2048 }
